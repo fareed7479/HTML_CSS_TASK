@@ -57,3 +57,4 @@ HTML_CSS_TASK/
 2. Open any `.html` file directly in your preferred modern web browser (Chrome, Edge, Firefox, Safari).
 3. Alternatively, run with VS Code's **Live Server** extension:
    - Right-click `index.html` and click **"Open with Live Server"**.
+

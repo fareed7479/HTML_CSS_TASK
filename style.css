@@ -1,0 +1,747 @@
+/* ==========================================================================
+   IRP LMS - Official Stylesheet
+   Theme Color Palette & Custom Properties
+   ========================================================================== */
+
+:root {
+  --primary-navy: #003366;
+  --primary-orange: #FE781E;
+  --primary-orange-hover: #E26312;
+  --secondary-blue: #5F9FE0;
+  --light-blue-bg: #E2F2FD;
+  --white-bg: #FFFFFF;
+  --light-blue-border: #D6E9FF;
+  
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  
+  --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  
+  --shadow-sm: 0 2px 6px rgba(0, 51, 102, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 51, 102, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 51, 102, 0.12);
+  
+  --transition: all 0.25s ease-in-out;
+  --max-width: 1180px;
+}
+
+/* ==========================================================================
+   Base & Reset Styles
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--white-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   Header & Navigation Bar
+   ========================================================================== */
+
+.site-header {
+  background-color: var(--white-bg);
+  border-bottom: 1px solid #EEF2F6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.02);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+  position: relative;
+  padding: 8px 0;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary-orange);
+}
+
+.nav-link.active {
+  color: var(--primary-orange);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--primary-orange);
+  border-radius: 2px;
+}
+
+.header-action {
+  display: flex;
+  align-items: center;
+}
+
+.btn-sign-in {
+  display: inline-block;
+  padding: 8px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-orange);
+  background-color: transparent;
+  border: 1.5px solid var(--primary-orange);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-sign-in:hover {
+  background-color: var(--primary-orange);
+  color: var(--white-bg);
+}
+
+/* ==========================================================================
+   Common Components & Buttons
+   ========================================================================== */
+
+.category-kicker {
+  color: var(--primary-orange);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.highlight-orange {
+  color: var(--primary-orange);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-orange);
+  color: var(--white-bg);
+  box-shadow: 0 4px 12px rgba(254, 120, 30, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-orange-hover);
+  box-shadow: 0 6px 16px rgba(254, 120, 30, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Hero Banners (Shared across pages)
+   ========================================================================== */
+
+.hero-banner {
+  background-color: var(--light-blue-bg);
+  border-radius: var(--radius-lg);
+  margin-top: 28px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--light-blue-border);
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 580px;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.hero-media {
+  flex: 0 0 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-artwork {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   Home Page: Learning Journey Section
+   ========================================================================== */
+
+.learning-journey-section {
+  padding: 50px 0 70px;
+}
+
+.section-header {
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.journey-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.journey-card {
+  background-color: var(--white-bg);
+  border: 1.5px solid var(--light-blue-border);
+  border-radius: var(--radius-md);
+  padding: 26px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--secondary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.step-badge {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-orange);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Courses Page: Video Tutorial Cards Grid
+   ========================================================================== */
+
+.courses-section {
+  padding: 40px 0 70px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.course-card {
+  background-color: var(--white-bg);
+  border: 1px solid var(--light-blue-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--secondary-blue);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #0F172A;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.course-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.course-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Explore More Courses Bar */
+.explore-bar {
+  background-color: var(--light-blue-bg);
+  border: 1px solid var(--light-blue-border);
+  border-radius: var(--radius-md);
+  padding: 24px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.explore-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.grid-dots-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.grid-dots-icon span {
+  width: 7px;
+  height: 7px;
+  background-color: var(--primary-orange);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.explore-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 3px;
+}
+
+.explore-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Contact Us Page: Split Two-Column Support Layout
+   ========================================================================== */
+
+.contact-section {
+  padding: 40px 0 70px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Left: Contact Info Panel */
+.contact-info-panel {
+  background-color: var(--light-blue-bg);
+  border: 1px solid var(--light-blue-border);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+}
+
+.contact-panel-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 12px;
+}
+
+.contact-panel-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.contact-item-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-orange);
+  margin-bottom: 6px;
+}
+
+.contact-item-value {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.contact-item-value a {
+  color: var(--primary-navy);
+  font-weight: 600;
+}
+
+.contact-item-value a:hover {
+  color: var(--primary-orange);
+  text-decoration: underline;
+}
+
+.contact-sublabel {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Right: Interactive Message Form Card */
+.contact-form-card {
+  background-color: var(--white-bg);
+  border: 1px solid var(--light-blue-border);
+  border-radius: var(--radius-md);
+  padding: 36px 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-header {
+  margin-bottom: 24px;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-control {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background-color: var(--white-bg);
+  border: 1px solid var(--light-blue-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  outline: none;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-control::placeholder {
+  color: #94A3B8;
+}
+
+.form-control:focus {
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 0 3px rgba(95, 159, 224, 0.2);
+}
+
+select.form-control {
+  appearance: auto;
+  cursor: pointer;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background-color: #F8FAFC;
+  border-top: 1px solid #EEF2F6;
+  padding: 28px 0;
+  margin-top: auto;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Responsive Design & Media Queries
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-banner {
+    padding: 40px 36px;
+  }
+  
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  
+  .hero-media {
+    flex: 0 0 300px;
+  }
+  
+  .journey-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 16px 0;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 24px;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 12px;
+  }
+  
+  .hero-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 36px 24px;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-media {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .journey-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .explore-bar {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .explore-left {
+    flex-direction: column;
+  }
+  
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-form-card {
+    padding: 26px 20px;
+  }
+  
+  .contact-info-panel {
+    padding: 26px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 1.7rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
